@@ -47,30 +47,28 @@ const PostLayout: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 }) => {
   // Get MDX component for post
   const Component = useMDXComponent(post.body.code);
-  return (
-    <>
-      <Head>
-        <title>{post.title}</title>
-      </Head>
+  return <>
+    <Head>
+      <title>{post.title}</title>
+    </Head>
 
-      <article>
-        {/* Link back to homepage */}
-        <div>
-          <Link href="/">
-            <a>Home</a>
-          </Link>
-        </div>
+    <article>
+      {/* Link back to homepage */}
+      <div>
+        <Link href="/">
+          Home
+        </Link>
+      </div>
 
-        {/* Display parsed markdown content */}
-        <div>
-          <h1>{post.title}</h1>
-          <time dateTime={post.date}>{post.date}</time>
-        </div>
+      {/* Display parsed markdown content */}
+      <div>
+        <h1>{post.title}</h1>
+        <time dateTime={post.date}>{post.date}</time>
+      </div>
 
-        <Component />
-      </article>
-    </>
-  );
+      <Component />
+    </article>
+  </>;
 };
 
 export default PostLayout;

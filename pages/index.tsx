@@ -25,7 +25,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
       {posts.map((post, idx) => (
         <div key={idx}>
           <Link href={post.url}>
-            <a>{post.title}</a>
+            {post.title}
           </Link>
         </div>
       ))}
